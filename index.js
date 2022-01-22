@@ -38,7 +38,18 @@ const selectedCommentIndex = comments.findIndex(
 
 // delete the comment with the ID of 823423
 // Using filter
-const commentRemoved = comments.filter((value, index, comments) => {
+const commentRemovedFilter = comments.filter((value, index, comments) => {
   return index !== selectedCommentIndex;
 });
-console.log(commentRemoved);
+console.table(commentRemovedFilter);
+
+// Using slice
+const commentRemovedSlice = [
+  ...comments.slice(0, selectedCommentIndex),
+  ...comments.slice(selectedCommentIndex + 1),
+];
+console.table(commentRemovedSlice);
+
+// Using splice
+comments.splice(selectedCommentIndex, 1);
+console.table(comments);
