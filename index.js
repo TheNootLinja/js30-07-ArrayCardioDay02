@@ -1,5 +1,3 @@
-console.log('connected!');
-
 // ## Array Cardio Day 2
 
 const people = [
@@ -19,7 +17,8 @@ let comments = [
 
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
-const olderThanNineteen = (person) => 2022 - person.year >= 19;
+const year = new Date().getFullYear();
+const olderThanNineteen = (person) => year - person.year >= 19;
 console.log(`One person over 19: ${people.some(olderThanNineteen)}`);
 // Array.prototype.every() // is everyone 19 or older?
 console.log(`Everyone over 19: ${people.every(olderThanNineteen)}`);
