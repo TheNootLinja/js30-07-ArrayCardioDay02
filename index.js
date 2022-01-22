@@ -1,5 +1,3 @@
-console.log('connected!');
-
 // ## Array Cardio Day 2
 
 const people = [
@@ -19,20 +17,25 @@ let comments = [
 
 // Some and Every Checks
 // Array.prototype.some() // is at least one person 19 or older?
-const olderThanNineteen = (person) => 2022 - person.year >= 19;
+const year = new Date().getFullYear();
+const olderThanNineteen = (person) => year - person.year >= 19;
 console.log(`One person over 19: ${people.some(olderThanNineteen)}`);
+
 // Array.prototype.every() // is everyone 19 or older?
 console.log(`Everyone over 19: ${people.every(olderThanNineteen)}`);
+
 // Array.prototype.find()
 // Find is like filter, but instead returns just the one you are looking for
 // find the comment with the ID of 823423
 const selectedComment = comments.find((comment) => comment.id === 823423);
 console.log(`Comment with id of 823423: ${selectedComment.text}`);
+
 // Array.prototype.findIndex()
 // Find the comment with this ID
 const selectedCommentIndex = comments.findIndex(
   (comment) => comment.id === 823423
 );
+
 // delete the comment with the ID of 823423
 // Using filter
 const commentRemoved = comments.filter((value, index, comments) => {
